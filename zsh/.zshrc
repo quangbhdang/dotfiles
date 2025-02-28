@@ -13,4 +13,5 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
+# Add oh-my-posh initialize
+eval "$(oh-my-posh init bash --config ./.config/oh-my-posh/dang_py_nordtron.yaml)"
