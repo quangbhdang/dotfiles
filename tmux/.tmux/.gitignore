@@ -1,0 +1,2 @@
+# Prevent conflict with main directory git by not track the TPM plugins git
+plugins/*
