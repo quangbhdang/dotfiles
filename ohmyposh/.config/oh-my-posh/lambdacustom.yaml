@@ -1,0 +1,93 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
+upgrade:
+  source: cdn
+  interval: 168h
+  auto: false
+  notice: false
+blocks:
+- type: prompt
+  alignment: left
+  segments:
+  - leading_diamond: ╭─
+    template: " {{ if .WSL }}WSL at {{ end }}{{.Icon}} \ue0b1"
+    foreground: "#fb7e14"
+    background: "#292929"
+    type: os
+    style: diamond
+  - properties:
+      always_enabled: true
+      style: austin
+      threshold: 500.0
+    template: " {{ .FormattedMs }} \ue0b1"
+    foreground: "#fb7e14"
+    background: "#292929"
+    type: executiontime
+    style: powerline
+  - template: " \uf0e7 "
+    foreground: "#26C6DA"
+    background: "#292929"
+    type: root
+    style: plain
+  - properties:
+      style: full
+      trailing_diamond: 
+    template: " {{ .Path }} \ue0b1"
+    foreground: "#fb7e14"
+    background: "#292929"
+    type: path
+    style: diamond
+  - foreground: "#D4E157"
+    background: "#292929"
+    type: git
+    style: plain
+  - properties:
+      style: simple
+    template: "  {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} "
+    foreground: "#1D9A30"
+    background: "#292929"
+    type: python
+    style: plain
+  - properties:
+      always_enabled: true
+      display_exit_code: true
+    trailing_diamond: 
+    template: " {{ if gt .Code 0 }}\uf00d {{ reason .Code }}{{ else }}\uf00c{{ end }} "
+    foreground: "#fb7e14"
+    background: "#292929"
+    type: status
+    style: diamond
+    background_templates:
+    - "{{ if gt .Code 0 }}#292929{{ end }}"
+- type: prompt
+  alignment: right
+  segments:
+  - leading_diamond: 
+    template: " {{ if .SSHSession }}\ueba9 {{ end }}{{ .UserName }}@{{ .HostName }} <#fb7e14>\ue0b3</> "
+    foreground: "#fb7e14"
+    background: "#292929"
+    type: session
+    style: diamond
+  - properties:
+      time_format: 15:04:05, _2
+    trailing_diamond: 
+    template: "{{ .CurrentDate | date .Format }} \uf073 "
+    foreground: "#fb7e14"
+    background: "#292929"
+    type: time
+    style: diamond
+- type: prompt
+  alignment: left
+  segments:
+  - properties:
+      always_enabled: true
+    leading_diamond: ╰─
+    trailing_diamond: 
+    template: 󰘧
+    foreground: "#292929"
+    background: "#fb7e14"
+    type: path
+    style: diamond
+  newline: true
+version: 3
+final_space: true
