@@ -1,0 +1,11 @@
+[alias]
+	st = status 				# Show current status
+	co = checkout 				# Switch branches
+	cob = checkout -b 			# Switch or create and checkout to new branch
+	cm = commit -m				# Commit with message
+	br = branch					# Set up new branch
+	bn = branch --show-current	# Show current branch
+	amend = commit --amend 		# Change previous commit message
+	undo = reset HEAD~1 --mixed # Undo last commit but keep change
+	df = diff
+	dc = diff --cached
