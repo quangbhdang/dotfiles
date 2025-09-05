@@ -2,4 +2,14 @@
 alias gc='gh copilot'
 alias gcs='gh copilot suggest'
 alias gcs='gh copilot explain'
-alias git_alias="git config -l | grep alias | sed 's/^alias\.//g'"
+# Show file in terminal
+alias lt='ls --human-readable --size -1 -S --classify'
+# Alias for quick navigation
+alias ..='cd ..'
+alias ....='cd ../..'
+# Search history
+alias gh='history|grep'
+# Remove file into trash
+alias tcn='mv --force -t ~/.local/share/Trash '
+# Conda shortcut
+alias conda_env_var='conda env config vars'
